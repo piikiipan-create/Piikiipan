@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <title>Растерянный цыплёнок</title>
   <defs>
+    <filter id="soft" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
     <style>
       .ol { stroke: #3a2a10; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
       /* 0–45%: лежит спиной (кепка), 55–100%: перевернулся лицом */
@@ -20,7 +21,7 @@
   </defs>
 
   <!-- тень -->
-  <ellipse cx="105" cy="172" rx="70" ry="9" fill="#000" opacity=".12"/>
+  <ellipse cx="105" cy="172" rx="70" ry="9" fill="#000" opacity=".12" filter="url(#soft)"/>
 
   <g class="flip">
     <!-- ВИД СО СПИНЫ -->
