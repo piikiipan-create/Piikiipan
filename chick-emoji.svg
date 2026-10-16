@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Растерянный цыплёнок</title>
+  <defs>
+    <style>
+      .ol { stroke: #3a2a10; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+      /* 0–45%: лежит спиной (кепка), 55–100%: перевернулся лицом */
+      .back  { animation: showBack 6s infinite; }
+      .front { animation: showFront 6s infinite; }
+      @keyframes showBack  { 0%,45% { opacity: 1 } 50%,100% { opacity: 0 } }
+      @keyframes showFront { 0%,45% { opacity: 0 } 50%,100% { opacity: 1 } }
+      .flip { transform-origin: 100px 130px; animation: flip 6s infinite; }
+      @keyframes flip {
+        0%,40% { transform: scaleY(1) }
+        47%    { transform: scaleY(.85) rotate(-4deg) }
+        55%,100% { transform: scaleY(1) rotate(0) }
+      }
+      .eye { animation: look 3s 3s infinite; transform-origin: center; }
+      @keyframes look { 0%,100% { transform: translateX(0) } 50% { transform: translateX(2px) } }
+    </style>
+  </defs>
+
+  <!-- тень -->
+  <ellipse cx="105" cy="172" rx="70" ry="9" fill="#000" opacity=".12"/>
+
+  <g class="flip">
+    <!-- ВИД СО СПИНЫ -->
+    <g class="back">
+      <ellipse cx="95" cy="125" rx="65" ry="45" fill="#ffc400" class="ol"/>
+      <path d="M38 105 Q60 72 105 74 Q150 76 160 100 L172 96 Q175 108 158 112" fill="#1d5f8e" class="ol"/>
+      <path d="M150 98 L178 94 L172 110 Z" fill="#2b2a73" class="ol"/>
+      <path d="M85 150 Q82 175 98 178 Q112 176 108 150 Z" fill="#c9645e" class="ol"/>
+      <path d="M45 150 q-10 18 4 22 q10 -4 8 -20" fill="#ffc400" class="ol"/>
+      <path d="M135 150 q14 12 6 24 q-14 0 -18 -16" fill="#ffc400" class="ol"/>
+    </g>
+
+    <!-- ВИД СПЕРЕДИ -->
+    <g class="front">
+      <!-- гребешок -->
+      <path d="M92 70 Q80 40 100 38 Q125 36 118 60 Q112 50 104 52 Q98 58 104 72 Z" fill="#c9645e" class="ol"/>
+      <!-- тело -->
+      <ellipse cx="100" cy="122" rx="68" ry="48" fill="#ffc400" class="ol"/>
+      <path d="M45 150 Q100 172 155 150" fill="#4f8a8b" class="ol"/>
+      <!-- клюв-щека справа -->
+      <path d="M166 118 q12 -4 12 4 q-2 8 -14 6" fill="#ffc400" class="ol"/>
+      <!-- нос -->
+      <ellipse cx="100" cy="108" rx="11" ry="9" fill="#ff9a1a" class="ol"/>
+      <!-- глаза -->
+      <g class="eye">
+        <ellipse cx="64" cy="104" rx="13" ry="11" fill="#fff" class="ol"/>
+        <circle cx="62" cy="106" r="4.5" fill="#222"/>
+        <ellipse cx="138" cy="96" rx="13" ry="10" fill="#fff" class="ol"/>
+        <circle cx="136" cy="98" r="4.5" fill="#222"/>
+      </g>
+      <!-- брови -->
+      <path d="M50 90 Q62 84 76 92" fill="none" class="ol"/>
+      <path d="M126 82 Q140 76 152 86" fill="none" class="ol"/>
+      <!-- рот -->
+      <path d="M85 138 Q100 128 118 134 Q116 146 100 146 Q88 146 85 138 Z" fill="#6b2f3a" class="ol"/>
+      <path d="M92 138 h20" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <!-- рука у щеки -->
+      <path d="M128 150 Q132 128 148 132 Q165 134 160 152 Q150 166 134 160 Z" fill="#ffc400" class="ol"/>
+      <path d="M140 138 v10 M148 138 v10" stroke="#3a2a10" stroke-width="2" stroke-linecap="round"/>
+      <!-- левая лапка -->
+      <path d="M38 150 q-8 14 6 18 q12 -2 10 -16" fill="#ffc400" class="ol"/>
+    </g>
+  </g>
+</svg>
